@@ -2,7 +2,7 @@ import * as ex from './_expander';
 import * as vscode from 'vscode';
 export class BaseExpander {
 
-    expand(text:string,startIndex:number,endIndex:number):  IResultSelection {
+    expand(text: string, startIndex: number, endIndex: number): IResultSelection {
         return null;
     };
 }
@@ -11,6 +11,7 @@ export const LanguageType = {
     JAVA_SCRIPT: 'javascript',
     TYPE_SCRIPT: 'typescript',
     HTML: 'html',
+    HTL: 'htl',
     PHP: 'php',
     Text: 'plaintext'
 }
@@ -46,7 +47,7 @@ export function get_line(text, startIndex, endIndex): ILine {
             newStartIndex = searchIndex + 1;
             break;
         }
-        else{
+        else {
             searchIndex -= 1;
         }
     }
@@ -60,7 +61,8 @@ export function get_line(text, startIndex, endIndex): ILine {
         if (linebreakRe.test(char)) {
             newEndIndex = searchIndex;
             break;
-        } else {;
+        } else {
+            ;
             searchIndex += 1;
         }
     }
@@ -70,26 +72,26 @@ export function get_line(text, startIndex, endIndex): ILine {
 export function escapeRegExp(str) {
     return str.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
 }
-export function trim(text:string):ILine{
+export function trim(text: string): ILine {
     const regStart = /^[ \t\n]*/;
     const regEnd = /[ \t\n]*$/;
     let rS = regStart.exec(text);
     let rE = regEnd.exec(text);
     let start = 0, end = text.length;
-    if(rS){
-        start=rS[0].length;
+    if (rS) {
+        start = rS[0].length;
     }
-    if(rE){
-        end=rE.index;
+    if (rE) {
+        end = rE.index;
     }
-    if(rS&&rE){
-        return {start:start,end:end};
+    if (rS && rE) {
+        return { start: start, end: end };
     }
     return null;
 }
 
-export function selection_contain_linebreaks(text:string,startIndex:number,endIndex:number):boolean{
+export function selection_contain_linebreaks(text: string, startIndex: number, endIndex: number): boolean {
     let linebreakRe = /\n/;
-  let part = text.substring(startIndex, endIndex);
-  return linebreakRe.test(part);
+    let part = text.substring(startIndex, endIndex);
+    return linebreakRe.test(part);
 }

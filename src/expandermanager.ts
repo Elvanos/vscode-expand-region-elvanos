@@ -15,6 +15,9 @@ export class ExpanderManager {
                 case LanguageType.HTML:
                     exp = new expander.html();
                     break;
+                case LanguageType.HTL:
+                    exp = new expander.htl();
+                    break;
                 case LanguageType.PHP:
                     exp = new expander.php();
                     break;
