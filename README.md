@@ -5,6 +5,8 @@ https://github.com/aronwoost/sublime-expand-region
 
 ### Only support javascript and html now ,it will support python and latex in a future
 
+### ELVANOS EDIT: Also works on HTL files (Adobe AEM templating system)
+
 ### JavaScript
 ![](https://raw.githubusercontent.com/windwp/vscode-expand-region/master/image/javascript.gif)
 1. Expand selection to word
@@ -52,6 +54,10 @@ and so on...
 3. npm test:watch (run mocha for test)
 
 # Changelog
+## 0.1.2
+ * updated typescript version so it actually compiles
+ * added HTL support
+
 ## 0.1.2
  * support php
 
