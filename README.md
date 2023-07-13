@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/windwp/vscode-expand-region.svg?branch=master)](https://travis-ci.org/windwp/vscode-expand-region)
-# vscode-expand-region
+# vscode-expand-region-elvanos
 porting sublime-expand-region to visual code
 https://github.com/aronwoost/sublime-expand-region
 
